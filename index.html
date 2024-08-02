@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise - Discord Moderation Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #7289da;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        nav a {
+            color: #7289da;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        h1, h2 {
+            color: #7289da;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #f4f4f4;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        #customize {
+            margin-top: 1rem;
+        }
+        #customize input {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rise</h1>
+        <p>Your Friendly Discord Moderation Assistant</p>
+    </header>
+
+    <nav>
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#terms" class="nav-link">Terms of Use</a>
+        <a href="#privacy" class="nav-link">Privacy Policy</a>
+    </nav>
+
+    <main>
+        <section id="home" class="content active">
+            <h2>Rise Bot</h2>
+            <p>Rise is a powerful Discord moderation bot designed to help server administrators maintain a safe and friendly environment. With customizable settings and easy-to-use commands, Rise streamlines your moderation tasks.</p>
+        </section>
+
+        <section id="terms" class="content">
+            <h2>Terms of Use</h2>
+            <p>By using Rise, you agree to the following terms:</p>
+            <ul>
+                <li>Rise is for use in Discord servers only.</li>
+                <li>You must have the necessary permissions to add and configure Rise in your server.</li>
+                <li>Rise stores only the server settings specified by administrators.</li>
+                <li>You agree not to use Rise for any illegal or unauthorized purpose.</li>
+                <li>We reserve the right to modify or terminate the service at any time.</li>
+            </ul>
+        </section>
+
+        <section id="privacy" class="content">
+            <h2>Privacy Policy</h2>
+            <p>At Rise, we take your privacy seriously. Here's what you need to know about our data practices:</p>
+            <ul>
+                <li>We do not collect or process any personal data.</li>
+                <li>Rise only stores server settings specified by administrators.</li>
+                <li>We do not share any data with third parties.</li>
+                <li>Server settings are securely stored and can be deleted upon request.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Rise. All rights reserved.</p>
+    </footer>
+
+    <script>
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = e.target.getAttribute('href').substring(1);
+                document.querySelectorAll('.content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
